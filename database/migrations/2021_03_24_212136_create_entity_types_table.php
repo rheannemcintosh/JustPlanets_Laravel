@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePlanetarySystemsEntitiesTable extends Migration
+class CreateEntityTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreatePlanetarySystemsEntitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('planetary_systems_entities', function (Blueprint $table) {
+        Schema::create('entity_types', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('planetary_system_id');
-            $table->foreignId('entity_id');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreatePlanetarySystemsEntitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('planetary_systems_entities');
+        Schema::dropIfExists('entity_types');
     }
 }
