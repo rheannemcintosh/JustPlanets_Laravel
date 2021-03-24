@@ -16,8 +16,10 @@ class CreateEntitiesTable extends Migration
         Schema::create('entities', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->float('mass');
-            $table->float('distance');
+            $table->double('mass', 20, 2);
+            $table->double('distance', 20, 2);
+            $table->foreignId('entity_type_id');
+            $table->foreignId('planetary_system_id');
             $table->timestamps();
         });
     }

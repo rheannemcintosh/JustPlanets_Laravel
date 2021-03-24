@@ -16,8 +16,8 @@ class CreatePlanetarySystemsTable extends Migration
         Schema::create('planetary_systems', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->float('mass');
-            $table->float('diameter');
+            $table->double('mass', 10, 2);
+            $table->double('diameter', 10, 2);
             $table->timestamps();
         });
     }
